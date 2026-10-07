@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PDF資料室 | 浜松医科大学 耳鼻咽喉科・頭頸部外科</title>
-    <meta name="description" content="浜松医科大学医学部耳鼻咽喉科・頭頸部外科学教室のPDF資料室。医局紹介パンフレット、学会寄稿論文、受賞報告、関連病院紹介PDFなどをまとめて閲覧・ダウンロードいただけます。">
+    <title>資料室 | 浜松医科大学 耳鼻咽喉科・頭頸部外科</title>
+    <meta name="description" content="浜松医科大学医学部耳鼻咽喉科・頭頸部外科学教室の資料室。医局紹介パンフレット、学会寄稿論文、受賞報告などのPDF資料や、教室の歩みを記録した歴代集合写真・記念写真アーカイブをご覧いただけます。">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
     <script>
@@ -94,7 +94,7 @@
                         </button>
                         <!-- Dropdown Menu -->
                         <div class="absolute left-0 mt-0 w-64 bg-white border border-brand-line rounded-xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 py-2 z-50">
-                            <a href="pdf-library.html" class="block px-4 py-2 text-xs font-bold text-brand-navy hover:bg-brand-paper hover:text-brand-blue transition-colors">PDF資料室</a>
+                            <a href="pdf-library.html" class="block px-4 py-2 text-xs font-bold text-brand-navy hover:bg-brand-paper hover:text-brand-blue transition-colors">資料室</a>
                             <a href="gakkai-taikenki.html" class="block px-4 py-2 text-xs font-bold text-brand-navy hover:bg-brand-paper hover:text-brand-blue transition-colors">学会体験記</a>
                             <a href="daigaku.html" class="block px-4 py-2 text-xs font-bold text-brand-navy hover:bg-brand-paper hover:text-brand-blue transition-colors">専攻医の一日：大学病院</a>
                             <a href="sityuu.html" class="block px-4 py-2 text-xs font-bold text-brand-navy hover:bg-brand-paper hover:text-brand-blue transition-colors">専攻医の一日：市中病院</a>
@@ -138,7 +138,7 @@
                         </svg>
                     </button>
                     <div id="mobile-submenu-content" class="hidden pl-4 pr-2 py-1 space-y-2 bg-brand-paper/50 rounded-lg">
-                        <a href="pdf-library.html" class="block py-1.5 text-xs text-brand-navy hover:text-brand-blue transition-colors">PDF資料室</a>
+                        <a href="pdf-library.html" class="block py-1.5 text-xs text-brand-navy hover:text-brand-blue transition-colors">資料室</a>
                         <a href="gakkai-taikenki.html" class="block py-1.5 text-xs text-brand-navy hover:text-brand-blue transition-colors">学会体験記</a>
                         <a href="daigaku.html" class="block py-1.5 text-xs text-brand-navy hover:text-brand-blue transition-colors">専攻医の一日：大学病院</a>
                         <a href="sityuu.html" class="block py-1.5 text-xs text-brand-navy hover:text-brand-blue transition-colors">専攻医の一日：市中病院</a>
@@ -160,15 +160,95 @@
             <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                 <div class="inline-flex items-center gap-2 text-brand-teal font-extrabold text-sm mb-4">
                     <span class="w-8 h-0.5 bg-brand-teal"></span>
-                    <span>Document Library</span>
+                    <span>Document &amp; Photo Archives</span>
                     <span class="w-8 h-0.5 bg-brand-teal"></span>
                 </div>
                 <h1 class="text-3xl sm:text-4xl font-black text-brand-navy leading-tight mb-4 reveal">
-                    PDF資料室
+                    資料室
                 </h1>
                 <p class="text-base text-brand-muted max-w-2xl mx-auto leading-relaxed reveal" style="transition-delay: 100ms;">
-                    医局紹介、学会雑誌、受賞報告、関連病院案内などのPDF資料をご覧いただけます。<br class="hidden sm:inline" />
-                    各資料カードの「PDFを表示」ボタンから新しいタブで開くことができます。
+                    医局紹介、学会雑誌、受賞報告などのPDF資料や、教室の歩みを記録した歴代集合写真・記念写真アーカイブをご覧いただけます。
+                </p>
+            </div>
+        </section>
+
+        <!-- 写真アーカイブセクション -->
+        <section class="py-6 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="mb-6 reveal">
+                <div class="flex items-center gap-2 text-brand-teal font-extrabold text-xs uppercase tracking-wider mb-1">
+                    <span>Photo Archives</span>
+                </div>
+                <h2 class="text-2xl font-black text-brand-navy flex items-center gap-3">
+                    <span class="w-1.5 h-6 bg-brand-blue rounded-full"></span>
+                    教室写真アーカイブ
+                </h2>
+                <p class="text-xs sm:text-sm text-brand-muted mt-1">
+                    教室の歩みとこれまでのメンバーを記録した写真アーカイブです。
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 reveal" style="transition-delay: 150ms;">
+                <!-- 写真カード1: 集合写真（旧） -->
+                <div class="codex-card group hover:shadow-lg transition-all duration-300">
+                    <div class="relative overflow-hidden bg-gray-50 border-b border-brand-line">
+                        <img src="images/group_photo_2026.png" alt="教室集合写真" class="w-full h-auto object-cover group-hover:scale-[1.02] transition-transform duration-500">
+                    </div>
+                    <div class="p-5">
+                        <div class="flex items-center justify-between gap-2 mb-2">
+                            <span class="inline-block text-[11px] font-bold px-2.5 py-0.5 rounded-full bg-blue-50 text-brand-blue border border-blue-100">
+                                集合写真
+                            </span>
+                            <span class="text-xs text-brand-muted font-medium">〜2026年</span>
+                        </div>
+                        <h3 class="text-base font-bold text-brand-navy mb-1.5">
+                            教室集合写真（大学講義室）
+                        </h3>
+                        <p class="text-xs text-brand-muted leading-relaxed">
+                            浜松医科大学講義室にて撮影された医局員・スタッフの集合写真です。
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 写真カード2: 祝賀会集合写真 -->
+                <div class="codex-card group hover:shadow-lg transition-all duration-300">
+                    <div class="relative overflow-hidden bg-gray-50 border-b border-brand-line">
+                        <img src="images/group_photo_2026.jpg" alt="開講記念・祝賀会集合写真" class="w-full h-auto object-cover group-hover:scale-[1.02] transition-transform duration-500">
+                    </div>
+                    <div class="p-5">
+                        <div class="flex items-center justify-between gap-2 mb-2">
+                            <span class="inline-block text-[11px] font-bold px-2.5 py-0.5 rounded-full bg-teal-50 text-brand-teal border border-teal-100">
+                                記念写真
+                            </span>
+                            <span class="text-xs text-brand-muted font-medium">開講・就任記念</span>
+                        </div>
+                        <h3 class="text-base font-bold text-brand-navy mb-1.5">
+                            開講記念・祝賀会 集合写真
+                        </h3>
+                        <p class="text-xs text-brand-muted leading-relaxed">
+                            同門の先生方・関連病院の先生方とともに撮影された記念集合写真です。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- セクション仕切り -->
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 my-8">
+            <div class="border-t border-brand-line/70"></div>
+        </div>
+
+        <!-- PDFセクション見出し -->
+        <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mb-2">
+            <div class="reveal">
+                <div class="flex items-center gap-2 text-brand-teal font-extrabold text-xs uppercase tracking-wider mb-1">
+                    <span>PDF Documents</span>
+                </div>
+                <h2 class="text-2xl font-black text-brand-navy flex items-center gap-3">
+                    <span class="w-1.5 h-6 bg-brand-teal rounded-full"></span>
+                    PDF資料・刊行物
+                </h2>
+                <p class="text-xs sm:text-sm text-brand-muted mt-1">
+                    医局紹介、学会雑誌、受賞報告、関連病院案内などのPDF資料をご覧いただけます。
                 </p>
             </div>
         </section>
@@ -212,7 +292,7 @@
         </section>
     </main>
 
-    <!-- フッター (全共通リンク、PDF資料室を追加) -->
+    <!-- フッター (全共通リンク、資料室を追加) -->
             <!-- Footer -->
     <footer class="py-12 bg-white border-t border-brand-line mt-12">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -248,7 +328,7 @@
                     <h4 class="text-xs font-black text-brand-teal uppercase tracking-wider">活動報告</h4>
                     <div class="flex flex-col gap-2 text-xs font-bold text-brand-muted">
                         <a href="blog.html" class="hover:text-brand-blue transition-colors">ブログ</a>
-                        <a href="pdf-library.html" class="hover:text-brand-blue transition-colors">PDF資料室</a>
+                        <a href="pdf-library.html" class="hover:text-brand-blue transition-colors">資料室</a>
                         <a href="gakkai-taikenki.html" class="hover:text-brand-blue transition-colors">学会体験記</a>
                     </div>
                 </div>
