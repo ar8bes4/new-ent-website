@@ -13,11 +13,23 @@
  * - pdfUrl:      PDFファイルへのURL（WixメディアのURLや、サーバー上のパス）
  * - thumbnail:   サムネイル画像のURL（空文字 "" の場合は、デフォルトのPDFアイコンが表示されます）
  * - publishDate: 掲載日（YYYY-MM 形式。新しいものが自動で先頭に並びます）
+ * - editionYear: 資料の版年（任意）。掲載月とは区別します。
+ * - previousEditions: 過去の資料（任意）。{ year?: number, pdfUrl: string } の配列。版年未確認時は year を省略します。
  * - author:      著者名・発行者名（省略時は非表示になります）
  * - description: 資料の簡単な説明文（カードの下部に表示されます。省略可）
  */
 
 const PDF_DATA = [
+  {
+    title: "大学病院紹介・診療実績：浜松医科大学",
+    category: "医局紹介",
+    pdfUrl: "pdfs/2025_hamamatsu-university.pdf",
+    thumbnail: "",
+    publishDate: "2026-10",
+    editionYear: 2025,
+    author: "浜松医科大学 耳鼻咽喉科・頭頸部外科",
+    description: "同門会誌の2025年版資料です。大学病院の診療実績、研究業績、教室の歴史などを掲載しています。"
+  },
   // --- 1. 医局紹介・広報関連・新聞報道 ---
   {
     title: "はんだ山の風 第63号（ロボット支援手術）",
@@ -132,136 +144,226 @@ const PDF_DATA = [
   {
     title: "関連病院紹介：沼津市立病院",
     category: "関連病院",
-    pdfUrl: "pdfs/2db1a0_be7420c2969a475daa400a5e72f7cb07.pdf",
+    pdfUrl: "pdfs/2025_numazu.pdf",
     thumbnail: "",
-    publishDate: "2024-04",
+    publishDate: "2026-10",
     author: "沼津市立病院 耳鼻咽喉科",
-    description: "沼津市立病院の耳鼻咽喉科・頭頸部外科における診療の特色、指導体制、研修医向けアピールポイントなどをまとめたPDF資料です。"
+    description: "同門会誌の2025年版資料です。診療実績や病院の紹介を掲載しています。",
+    editionYear: 2025,
+    previousEditions: [
+      {
+        pdfUrl: "pdfs/2db1a0_be7420c2969a475daa400a5e72f7cb07.pdf"
+      }
+    ]
   },
   {
     title: "関連病院紹介：富士宮市立病院",
     category: "関連病院",
-    pdfUrl: "pdfs/2db1a0_47a6b3e21b364d7daf5e2718f04d2492.pdf",
+    pdfUrl: "pdfs/2025_fujinomiya.pdf",
     thumbnail: "",
-    publishDate: "2024-04",
+    publishDate: "2026-10",
     author: "富士宮市立病院 耳鼻咽喉科",
-    description: "富士宮市立病院における地域中核病院としての役割、一般耳鼻科診療および臨床研修の魅力をご案内する紹介PDF資料です。"
+    description: "同門会誌の2025年版資料です。診療実績や病院の紹介を掲載しています。",
+    editionYear: 2025,
+    previousEditions: [
+      {
+        pdfUrl: "pdfs/2db1a0_47a6b3e21b364d7daf5e2718f04d2492.pdf"
+      }
+    ]
   },
   {
     title: "関連病院紹介：静岡済生会総合病院",
     category: "関連病院",
-    pdfUrl: "pdfs/2db1a0_453b1d709fec41cca6e9e90b294b424c.pdf",
+    pdfUrl: "pdfs/2025_shizuoka-saiseikai.pdf",
     thumbnail: "",
-    publishDate: "2024-04",
+    publishDate: "2026-10",
     author: "静岡済生会総合病院 耳鼻咽喉科",
-    description: "静岡済生会総合病院の頭頸部外科・耳鼻咽喉科の診療体制、手術症例数、熱意あふれる指導体制についての資料です。"
+    description: "同門会誌の2025年版資料です。診療実績や病院の紹介を掲載しています。",
+    editionYear: 2025,
+    previousEditions: [
+      {
+        pdfUrl: "pdfs/2db1a0_453b1d709fec41cca6e9e90b294b424c.pdf"
+      }
+    ]
   },
   {
     title: "関連病院紹介：焼津市立総合病院",
     category: "関連病院",
-    pdfUrl: "pdfs/2db1a0_832a7c647f0f4c268ee35a3830bc2c4a.pdf",
+    pdfUrl: "pdfs/2025_yaizu.pdf",
     thumbnail: "",
-    publishDate: "2024-04",
+    publishDate: "2026-10",
     author: "焼津市立総合病院 耳鼻咽喉科",
-    description: "志太榛原地区の基幹病院である焼津市立総合病院における、手術手技の習得と研修プログラムの特徴をまとめた資料です。"
+    description: "同門会誌の2025年版資料です。診療実績や病院の紹介を掲載しています。",
+    editionYear: 2025,
+    previousEditions: [
+      {
+        pdfUrl: "pdfs/2db1a0_832a7c647f0f4c268ee35a3830bc2c4a.pdf"
+      }
+    ]
   },
   {
     title: "関連病院紹介：藤枝市立総合病院",
     category: "関連病院",
-    pdfUrl: "pdfs/2db1a0_526700986dae437fa8828d11341cc5ed.pdf",
+    pdfUrl: "pdfs/2025_fujieda.pdf",
     thumbnail: "",
-    publishDate: "2024-04",
+    publishDate: "2026-10",
     author: "藤枝市立総合病院 耳鼻咽喉科",
-    description: "藤枝市立総合病院耳鼻咽喉科での初期・後期臨床研修プランや、豊富な手術経験が得られる診療環境をご紹介します。"
+    description: "同門会誌の2025年版資料です。診療実績や病院の紹介を掲載しています。",
+    editionYear: 2025,
+    previousEditions: [
+      {
+        pdfUrl: "pdfs/2db1a0_526700986dae437fa8828d11341cc5ed.pdf"
+      }
+    ]
   },
   {
     title: "関連病院紹介：清水厚生病院",
     category: "関連病院",
-    pdfUrl: "pdfs/2db1a0_c2d2c143473846deae5b9cee7b724bb2.pdf",
+    pdfUrl: "pdfs/2025_shimizu-kosei.pdf",
     thumbnail: "",
-    publishDate: "2024-04",
+    publishDate: "2026-10",
     author: "清水厚生病院 耳鼻咽喉科",
-    description: "清水厚生病院の診療活動、地域住民を支える耳鼻咽喉科・アレルギー科医療の取り組みについて紹介しています。"
+    description: "同門会誌の2025年版資料です。診療実績や病院の紹介を掲載しています。",
+    editionYear: 2025,
+    previousEditions: [
+      {
+        pdfUrl: "pdfs/2db1a0_c2d2c143473846deae5b9cee7b724bb2.pdf"
+      }
+    ]
   },
   {
     title: "関連病院紹介：静岡厚生病院",
     category: "関連病院",
-    pdfUrl: "pdfs/2db1a0_127d81b4695f4e35ba5328f877f79398.pdf",
+    pdfUrl: "pdfs/2025_shizuoka-kosei.pdf",
     thumbnail: "",
-    publishDate: "2024-04",
+    publishDate: "2026-10",
     author: "静岡厚生病院 耳鼻咽喉科",
-    description: "静岡厚生病院における、若手医師がプライマリケアから各種手術まで総合的に学べる環境や指導体制をご案内します。"
+    description: "同門会誌の2025年版資料です。診療実績や病院の紹介を掲載しています。",
+    editionYear: 2025,
+    previousEditions: [
+      {
+        pdfUrl: "pdfs/2db1a0_127d81b4695f4e35ba5328f877f79398.pdf"
+      }
+    ]
   },
   {
     title: "関連病院紹介：静岡県立こども病院",
     category: "関連病院",
-    pdfUrl: "pdfs/2db1a0_49980f0b42694f508c923646ef6e33a0.pdf",
+    pdfUrl: "pdfs/2025_shizuoka-childrens.pdf",
     thumbnail: "",
-    publishDate: "2024-04",
+    publishDate: "2026-10",
     author: "静岡県立こども病院 耳鼻咽喉科",
-    description: "小児耳鼻咽喉科の専門的医療機関として、先天性疾患や難治性疾患に対する専門的アプローチと研修の特色をまとめた資料です。"
+    description: "同門会誌の2025年版資料です。診療実績や病院の紹介を掲載しています。",
+    editionYear: 2025,
+    previousEditions: [
+      {
+        pdfUrl: "pdfs/2db1a0_49980f0b42694f508c923646ef6e33a0.pdf"
+      }
+    ]
   },
   {
     title: "関連病院紹介：総合病院聖隷浜松病院",
     category: "関連病院",
-    pdfUrl: "pdfs/2db1a0_2897c3ad81674f5a8ad3adbe92d8bddb.pdf",
+    pdfUrl: "pdfs/2025_seirei-hamamatsu.pdf",
     thumbnail: "",
-    publishDate: "2024-04",
+    publishDate: "2026-10",
     author: "聖隷浜松病院 耳鼻咽喉科・頭頸部外科",
-    description: "トップクラスの手術症例数を誇る聖隷浜松病院の、頭頸部がん治療や高度中耳手術などの専門研修の魅力をまとめた資料です。"
+    description: "同門会誌の2025年版資料です。診療実績や病院の紹介を掲載しています。",
+    editionYear: 2025,
+    previousEditions: [
+      {
+        pdfUrl: "pdfs/2db1a0_2897c3ad81674f5a8ad3adbe92d8bddb.pdf"
+      }
+    ]
   },
   {
     title: "関連病院紹介：浜松医療センター",
     category: "関連病院",
-    pdfUrl: "pdfs/2db1a0_b439390d5fcd47fe999666dfb5338707.pdf",
+    pdfUrl: "pdfs/2025_hamamatsu-medical-center.pdf",
     thumbnail: "",
-    publishDate: "2024-04",
+    publishDate: "2026-10",
     author: "浜松医療センター 耳鼻咽喉科",
-    description: "浜松医療センター耳鼻咽喉科における高度救急医療と研修プログラム、指導医体制についてわかりやすく解説しています。"
+    description: "同門会誌の2025年版資料です。診療実績や病院の紹介を掲載しています。",
+    editionYear: 2025,
+    previousEditions: [
+      {
+        pdfUrl: "pdfs/2db1a0_b439390d5fcd47fe999666dfb5338707.pdf"
+      }
+    ]
   },
   {
     title: "関連病院紹介：総合病院聖隷三方原病院",
     category: "関連病院",
-    pdfUrl: "pdfs/2db1a0_011efd42ba824eb4a120d3d87af8ec39.pdf",
+    pdfUrl: "pdfs/2025_seirei-mikatahara.pdf",
     thumbnail: "",
-    publishDate: "2024-04",
+    publishDate: "2026-10",
     author: "聖隷三方原病院 耳鼻咽喉科",
-    description: "聖隷三方原病院の耳鼻科における幅広い疾患群、嚥下治療などのチーム医療や当直等の研修環境についてご紹介します。"
+    description: "同門会誌の2025年版資料です。診療実績や病院の紹介を掲載しています。",
+    editionYear: 2025,
+    previousEditions: [
+      {
+        pdfUrl: "pdfs/2db1a0_011efd42ba824eb4a120d3d87af8ec39.pdf"
+      }
+    ]
   },
   {
     title: "関連病院紹介：遠州病院",
     category: "関連病院",
-    pdfUrl: "pdfs/2db1a0_ab389677d1b84c1e812880891c43d6cc.pdf",
+    pdfUrl: "pdfs/2025_enshu.pdf",
     thumbnail: "",
-    publishDate: "2024-04",
+    publishDate: "2026-10",
     author: "静岡県厚生連 遠州病院 耳鼻咽喉科",
-    description: "浜松市中心部で地域医療に貢献する遠州病院の診療活動と、密着した医療活動・指導体制について紹介するPDF資料です。"
+    description: "同門会誌の2025年版資料です。診療実績や病院の紹介を掲載しています。",
+    editionYear: 2025,
+    previousEditions: [
+      {
+        pdfUrl: "pdfs/2db1a0_ab389677d1b84c1e812880891c43d6cc.pdf"
+      }
+    ]
   },
   {
     title: "関連病院紹介：中東遠総合医療センター",
     category: "関連病院",
-    pdfUrl: "pdfs/2db1a0_9df876d627824ddd925b4926bdde63f6.pdf",
+    pdfUrl: "pdfs/2025_chutoen.pdf",
     thumbnail: "",
-    publishDate: "2024-04",
+    publishDate: "2026-10",
     author: "中東遠総合医療センター 耳鼻咽喉科",
-    description: "掛川市・袋井市地域の中核を担う中東遠総合医療センターでの頭頸部外科診療、若手医師の手術執刀・ステップアッププランをご案内します。"
+    description: "同門会誌の2025年版資料です。診療実績や病院の紹介を掲載しています。",
+    editionYear: 2025,
+    previousEditions: [
+      {
+        pdfUrl: "pdfs/2db1a0_9df876d627824ddd925b4926bdde63f6.pdf"
+      }
+    ]
   },
   {
     title: "関連病院紹介：磐田市立総合病院",
     category: "関連病院",
-    pdfUrl: "pdfs/2db1a0_deb5c6ad8fac47e0be8f249b8c486401.pdf",
+    pdfUrl: "pdfs/2025_iwata.pdf",
     thumbnail: "",
-    publishDate: "2024-04",
+    publishDate: "2026-10",
     author: "磐田市立総合病院 耳鼻咽喉科",
-    description: "磐田市立総合病院の耳鼻咽喉科における多様な一般外来、救急症例、手術の執刀機会など若手専攻医向けの実務環境についての資料です。"
+    description: "同門会誌の2025年版資料です。診療実績や病院の紹介を掲載しています。",
+    editionYear: 2025,
+    previousEditions: [
+      {
+        pdfUrl: "pdfs/2db1a0_deb5c6ad8fac47e0be8f249b8c486401.pdf"
+      }
+    ]
   },
   {
-    title: "関連病院紹介：青山総合病院",
+    title: "関連病院紹介：総合青山病院",
     category: "関連病院",
-    pdfUrl: "pdfs/2db1a0_e53da27a8127482e921170539b086049.pdf",
+    pdfUrl: "pdfs/2025_sogo-aoyama.pdf",
     thumbnail: "",
-    publishDate: "2024-04",
-    author: "青山総合病院 耳鼻咽喉科",
-    description: "愛知県東部（豊川市・豊橋市等）の急性期医療を担う青山総合病院の、診療アピールポイントと研修体制についてのPDFです。"
+    publishDate: "2026-10",
+    author: "総合青山病院 耳鼻咽喉科",
+    description: "同門会誌の2025年版資料です。診療実績や病院の紹介を掲載しています。",
+    editionYear: 2025,
+    previousEditions: [
+      {
+        pdfUrl: "pdfs/2db1a0_e53da27a8127482e921170539b086049.pdf"
+      }
+    ]
   }
 ];

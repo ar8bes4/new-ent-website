@@ -472,13 +472,25 @@
 
                 // 日付HTML
                 const dateHtml = dateStr 
-                    ? `<span class="flex items-center gap-1"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>${dateStr}</span>` 
+                    ? `<span class="flex items-center gap-1"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>${item.editionYear ? '掲載：' : ''}${dateStr}</span>`
+                    : '';
+
+                // 版年と掲載月を区別し、過去の資料は必要なときだけ表示します。
+                const editionHtml = item.editionYear
+                    ? `<span class="rounded bg-brand-paper px-2 py-1 text-brand-blue">${item.editionYear}年版</span>`
+                    : '';
+                const previousEditions = item.previousEditions || [];
+                const archiveHtml = previousEditions.length
+                    ? `<details class="mt-3 text-xs text-brand-muted">
+                        <summary class="cursor-pointer rounded py-1 font-bold hover:text-brand-blue focus-visible:outline focus-visible:outline-2 focus-visible:outline-brand-blue">過去の資料</summary>
+                        <ul class="mt-2 space-y-2">${previousEditions.map(edition => `<li><a href="${edition.pdfUrl}" target="_blank" rel="noopener noreferrer" class="inline-block rounded py-1 text-brand-blue underline underline-offset-4 focus-visible:outline focus-visible:outline-2 focus-visible:outline-brand-blue">${edition.year ? `${edition.year}年版PDFを表示` : '旧版PDFを表示'}</a></li>`).join('')}</ul>
+                    </details>`
                     : '';
 
                 // ボタンのアクション
                 const buttonDisabled = !item.pdfUrl ? 'disabled opacity-50 cursor-not-allowed' : '';
                 const buttonHref = item.pdfUrl || '#';
-                const buttonText = item.pdfUrl ? 'PDFを表示する' : '資料準備中';
+                const buttonText = item.pdfUrl ? (item.editionYear ? `${item.editionYear}年版PDF` : 'PDFを表示する') : '資料準備中';
                 const buttonIcon = item.pdfUrl 
                     ? `<svg class="w-4 h-4 ml-1 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>`
                     : '';
@@ -508,6 +520,7 @@
                                 
                                 <!-- メタ情報（著者・日付） -->
                                 <div class="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs font-bold text-brand-muted mb-3.5">
+                                    ${editionHtml}
                                     ${authorHtml}
                                     ${authorHtml && dateHtml ? '<span>•</span>' : ''}
                                     ${dateHtml}
@@ -526,6 +539,7 @@
                                 <span>${buttonText}</span>
                                 ${buttonIcon}
                             </a>
+                            ${archiveHtml}
                         </div>
                     </div>
                 `;
